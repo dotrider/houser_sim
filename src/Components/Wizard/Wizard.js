@@ -1,18 +1,28 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 
-const Wizard = () => {
+const Wizard = (props) => {
 //mapStateToProps
 const {name, address, city, state, zip, image, mortgage, rent} = useSelector( state => state)
 
 //dispatchToProps
 const dispatch = useDispatch()
 
+const addHouse = () => {
+    axios.post(`/api/house`, {name, address, city, state, zip, image, mortgage, rent})
+    .then(res => {
+        dispatch({type: name, payload: res.data})
+    }).catch(err => console.log(err))
+    props.history.push('/')
+}
+
 const handleChange = (e) => {
     dispatch({type: e.target.name, payload: e.target.value})
 }
+
 
     return(
         <section>
@@ -31,13 +41,13 @@ const handleChange = (e) => {
                 <label>Zipcode:</label>
                 <input name='SET_ZIP' value={zip} onChange={handleChange}/>
                 <Link to ='/'>Cancel</Link>
-                <Link to ='/wizard/1'>Next</Link>
+                <Link to ='/wizard/2'>Next</Link>
             </div>
             <div>
                 <label>Image URL</label>
                 <input name='SET_IMAGE' value={image} onChange={handleChange}/>
                 <Link to ='/'>Cancel</Link>
-                <Link to ='/wizard/2'>Next</Link>
+                <Link to ='/wizard/3'>Next</Link>
             </div>
             <div>
                 <label>Monthly Mortgage</label>
@@ -45,6 +55,7 @@ const handleChange = (e) => {
                 <label>Rent</label>
                 <input name='SET_RENT' value={rent} onChange={handleChange}/>
                 <Link to ='/'>Cancel</Link>
+                <button onClick={addHouse}>POST</button>
             </div>
         </section>
     )
