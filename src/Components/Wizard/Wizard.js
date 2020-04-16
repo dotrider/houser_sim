@@ -22,7 +22,7 @@ const addHouse = () => {
 const handleChange = (e) => {
     dispatch({type: e.target.name, payload: e.target.value})
 }
-
+console.log('props', props)
 
     return(
         <section>
@@ -40,23 +40,26 @@ const handleChange = (e) => {
                 <input name='SET_STATE' value={state} onChange={handleChange}/>
                 <label>Zipcode:</label>
                 <input name='SET_ZIP' value={zip} onChange={handleChange}/>
-                <Link to ='/'>Cancel</Link>
-                <Link to ='/wizard/2'>Next</Link>
+                {/* <button onClick={props.history.goBack()}>Previous</button> */}
+                {/* <Link to ='/wizard/2'>Next</Link> */}
             </div>
+
             <div>
                 <label>Image URL</label>
                 <input name='SET_IMAGE' value={image} onChange={handleChange}/>
-                <Link to ='/'>Cancel</Link>
-                <Link to ='/wizard/3'>Next</Link>
+                {/* <button onClick={props.history.goBack()}>Previous</button>
+                <Link to ='/wizard/3'>Next</Link> */}
             </div>
+
             <div>
                 <label>Monthly Mortgage</label>
                 <input name='SET_MORTGAGE' value={mortgage} onChange={handleChange}/>
                 <label>Rent</label>
                 <input name='SET_RENT' value={rent} onChange={handleChange}/>
-                <Link to ='/'>Cancel</Link>
-                <button onClick={addHouse}>POST</button>
+                {/* <button onClick={props.history.goBack()}>Previous</button> */}
+                <button onClick={addHouse}>POST</button> 
             </div>
+
         </section>
     )
 }

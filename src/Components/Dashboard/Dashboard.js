@@ -14,12 +14,13 @@ const Dashboard = () => {
    
     useEffect(() => {
         dispatch(getHouses())
-    }, [dispatch])
+    }, [dispatch]);
 
     const deleteHouse = (id) => {
         axios.delete(`/api/house/${id}`).then(() => {
             alert('Success!')
-        })
+        });
+        dispatch(getHouses());
     }
 
  
