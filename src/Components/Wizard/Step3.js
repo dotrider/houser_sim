@@ -26,16 +26,19 @@ const handleChange = (e) => {
 console.log('Step3_props', props)
 
     return(
-        <section>
-            Step3
-            <Link to ='/'>Cancel</Link>
-
-                <label>Monthly Mortgage</label>
+        <section className='steps'>
+                <div className='info'>
+                <p>Monthly Mortgage:</p>
                 <input name='SET_MORTGAGE' value={mortgage} onChange={handleChange}/>
-                <label>Rent</label>
+                </div>
+                <div className='info'>
+                <p>Rent:</p>
                 <input name='SET_RENT' value={rent} onChange={handleChange}/>
-                <button onClick={() => props.history.push('/wizard/step2')}>Previous</button>
-                <button onClick={addHouse}>POST</button> 
+                </div>
+                <div className='btns'>
+                <span className='next'  onClick={() => props.history.push('/wizard/step2')}>Previous Step</span>
+                <span className='next post' onClick={addHouse}>Post</span>
+                </div>
         </section>
     )
 }

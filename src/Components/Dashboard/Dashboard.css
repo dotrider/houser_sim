@@ -1,0 +1,32 @@
+
+.dashboard {
+   background-color: #E5F4EC;
+   width: 60vw;
+   height: 85vh;
+   margin: 0 auto;
+
+}
+
+.heading {
+   font-family: 'Open Sans', sans-serif;
+   font-weight: 700;
+   font-size: 2rem;
+   height: 50px;
+   display: flex;
+   justify-content: space-between;
+   padding: 20px 0;
+   color: #3B5248;
+   border-bottom: 1px solid #000;
+   margin: 0 50px 0;
+}
+
+#add {
+   font-size: 1.5rem;
+   background-color: #8AEA92;
+   padding: 5px;
+   text-decoration: none;
+   display: inline-block;
+   color: #3B5248;
+}
+
+

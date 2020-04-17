@@ -23,24 +23,30 @@ const dispatch = useDispatch()
 
 
     return(
-        <section>
-            <Link to ='/'>Cancel</Link>
-
-
-                <label>Name:</label>
+        <section className='steps'>
+                <div className='info'>
+                <p>Name:</p>
                 <input name='name' value={name} onChange={e => setName(e.target.value)}/>
-                <label>Address:</label>
+                </div>
+                <div className='info'>
+                <p>Address:</p>
                 <input name='address' value={address} onChange={e => setAddress(e.target.value)}/>
-                <label>City:</label>
+                </div>
+                <div className='info'>
+                <p>City:</p>
                 <input name='city' value={city} onChange={e => setCity(e.target.value)}/>
-                <label>State:</label>
+                </div>
+                <div className='info'>
+                <p>State:</p>
                 <input name='state' value={state} onChange={e => setState(e.target.value)}/>
-                <label>Zipcode:</label>
+                </div>
+                <div className='info'>
+                <p>Zipcode:</p>
                 <input name='zip' value={zip} onChange={e => setZip(e.target.value)}/>
-                <button onClick={() => props.history.push('/wizard/1')}>Previous</button>
-                <button onClick={() => {
+                </div>
+                <span className='next' onClick={() => {
                    dispatch(updateInfo({name, address, city, state, zip}))
-                    props.history.push('/wizard/step2')}}>Next</button>
+                    props.history.push('/wizard/step2')}}>Next</span>
         </section>
     )
 }

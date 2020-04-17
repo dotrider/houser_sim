@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { getHouses } from '../../redux/reducer';
 import axios from 'axios';
+import './Dashboard.css';
 
 const Dashboard = () => {
     //mapStateToProps
@@ -26,10 +27,12 @@ const Dashboard = () => {
  
     const mappedHouses = houses.map(home => <House deleteHouse={deleteHouse} key={home.id} home = {home}/>)
     return(
-        <section>
-            Dashboard
-            <Link to='/wizard/step1'>Add New Property</Link>
-            {mappedHouses}
+        <section className='dashboard'>
+            <div className='heading'>
+             Dashboard    
+            <Link to='/wizard/step1'><span id='add'>Add New Property</span></Link>
+            </div>   
+                {mappedHouses}
         </section>
     )
 }

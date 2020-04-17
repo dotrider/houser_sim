@@ -1,0 +1,32 @@
+.houses {
+    padding: 10px;
+    font-weight: 400;
+}
+
+.container {
+    background-color: #DEDEDE;  
+    width: 50vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    font-family: 'Open Sans', sans-serif;
+}
+
+#x { 
+    color: gray;
+    font-weight: 700;
+    text-align: right;
+}
+
+p {
+    text-align: left;
+}
+
+#pic {
+    padding: 10px;
+}
+img {
+    height: 80px;
+}

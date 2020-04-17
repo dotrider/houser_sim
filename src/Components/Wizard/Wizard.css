@@ -1,0 +1,63 @@
+.wizard {
+    background-color: #E5F4EC;
+    width: 60vw;
+    height: 85vh;
+    margin: 0 auto;
+ 
+ }
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+
+}
+
+
+.steps {
+    width: 30vw;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+input {
+    border: 1px solid #519872;
+    border-radius: 2px;
+    height: 25px;
+    margin: 2px;
+    width: 200px;
+}
+
+/*BUTTONS*/
+
+#cancel {
+    font-size: 1.5rem;
+    background-color: #FEC2C2;
+    padding: 5px;
+    text-decoration: none;
+    display: inline-block;
+    color: #3B5248;
+ }
+
+
+.next {
+    font-size: 1.5rem;
+    background-color: #3B5248;
+    padding: 5px;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    bottom: 0;
+} 
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post {
+    background-color: #8AEA92;
+    color: #3B5247;
+}

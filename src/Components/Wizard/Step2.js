@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {Link} from 'react-router-dom';
 import { updateImg } from '../../redux/reducer';
 
 
@@ -20,17 +19,19 @@ const dispatch = useDispatch()
 
 
     return(
-        <section>
-            Step2
-            <Link to ='/'>Cancel</Link>
-                <label>Image URL</label>
-                <input name='SET_IMAGE' value={image} onChange={e => setImage(e.target.value)}/>
-                <button onClick={() => {
-                    updateImg(image)
-                    props.history.push('/wizard/step1')}}>Previous</button>
-                <button onClick={() => {
-                    dispatch(updateImg(image))
-                    props.history.push('/wizard/step3')}}>Next</button>
+        <section className='steps'>
+                <div className='info'>
+                <p>Image URL:</p>
+                <input name='image' value={image} onChange={e => setImage(e.target.value)}/>
+                </div>
+                <div className='btns'>
+                <span className='next' onClick={() => {
+                updateImg(image)
+                props.history.push('/wizard/step1')}}>Previous Step</span>
+                <span className='next' onClick={() => {
+            dispatch(updateImg(image))
+                props.history.push('/wizard/step3')}}>Next Step</span>
+                </div>
 
         </section>
     )
