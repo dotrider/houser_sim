@@ -15,14 +15,11 @@ let initialState = {
 }
 
 const SET_HOUSES = 'SET_HOUSES';
-const SET_NAME = 'SET_NAME';
-const SET_ADDRESS = 'SET_ADDRESS';
-const SET_CITY = 'SET_CITY';
-const SET_STATE = 'SET_STATE';
-const SET_ZIP = 'SET_ZIP';
 const SET_IMAGE = 'SET_IMAGE';
 const SET_MORTGAGE = 'SET_MORTGAGE';
 const SET_RENT = 'SET_RENT';
+const UPDATE_INFO = 'UPDATE_INFO';
+
 
 
 export const getHouses = () => {
@@ -34,25 +31,35 @@ export const getHouses = () => {
    }
 }
 
+
+export const updateInfo = (obj) => {
+    console.log('updateR', obj)
+    return{
+        type: UPDATE_INFO,
+        payload: obj
+    }
+}
+
+export const updateImg = (image) => {
+    console.log('updateI', image)
+    return{
+        type: SET_IMAGE,
+        payload: image
+    }
+}
+
+
 export default function reducer (state = initialState, action) {
-    console.log(action)
+    console.log('reducer',action)
     switch(action.type){
         case SET_HOUSES + '_PENDING':
             return {...state, loading: true};
         case SET_HOUSES + '_FULFILLED':
             return {...state, loading: false, houses: action.payload.data};
         case SET_HOUSES + '_REJECTED':
-            return {...state, loading: false};   
-        case SET_NAME:
-            return {...state, name: action.payload};
-        case SET_ADDRESS:
-            return {...state, address: action.payload};
-        case SET_CITY:
-            return {...state, city: action.payload};
-        case SET_STATE:
-            return {...state, state: action.payload};
-        case SET_ZIP:
-            return {...state, zip: action.payload};
+            return {...state, loading: false};  
+        case UPDATE_INFO:
+            return {...state, ...action.payload};      
         case SET_IMAGE:
             return {...state, image: action.payload};
         case SET_MORTGAGE:

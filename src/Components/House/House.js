@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const House = (props) => {
-    const {name, id} = props.home
+    const {name, address, state, city, zip, id} = props.home
     
 
 
@@ -10,6 +10,10 @@ const House = (props) => {
     return(
         <section>
             <p>{name}</p>
+            <p>{address}</p>
+            <p>{state}</p>
+            <p>{city}</p>
+            <p>{zip}</p>
             <button onClick={() => props.deleteHouse(id)}>Delete</button>
         </section>
     )
