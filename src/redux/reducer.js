@@ -40,6 +40,7 @@ export const updateInfo = (obj) => {
     }
 }
 
+
 export const updateImg = (image) => {
     console.log('updateI', image)
     return{
